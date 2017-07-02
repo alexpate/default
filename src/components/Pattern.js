@@ -9,21 +9,22 @@ const Container = styled.section`
   justify-content: center;
   background-color: ${props => props.backgroundColor};
   color: ${props => props.color};
+  font-family: ${props => props.font};
 `;
 
 const Title = styled.h1`
   font-size: 2rem;
+  font-family: inherit;
   color: inherit;
-  font-family: ${props => props.fontFamily};
 `;
 
 
 const Pattern = props => {
-  const {fontFamily, colorPrimary, colorSecondary, title, description} = props;
+  const {font, colorPrimary, colorSecondary, title, description} = props;
 
   return (
-    <Container backgroundColor={colorPrimary} color={colorSecondary}>
-      <Title fontFamily={fontFamily}>{fontFamily}</Title>
+    <Container backgroundColor={colorPrimary} color={colorSecondary} font={font.css}>
+      <Title>{font.name}</Title>
     </Container>
   )
 }

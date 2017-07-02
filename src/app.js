@@ -1,31 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {injectGlobal} from 'styled-components';
+import {normalize} from 'polished';
 
-import Pattern from 'components/pattern';
+injectGlobal`${normalize()}`
+
+import PatternGroup from 'components/pattern-group';
 
 const App = () => {
-  const patterns = [
-    {
-      colors: ["#663399", "#FF6633"],
-      fontFamily: "Times New Roman"
-    },
-    {
-      colors: ["#33CCFF", "#FFFF33"],
-      fontFamily: "Avenir"
-    },
-  ];
-
   return (
-    <div className="sections">
-      {patterns.map((item, index) => (
-        <Pattern
-          fontFamily={item.fontFamily}
-          colorPrimary={item.colors[0]}
-          colorSecondary={item.colors[1]}
-          key={index}
-        />
-      ))}
-    </div>
+    <PatternGroup />
   )
 }
 
