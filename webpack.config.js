@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: "./src/app",
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname),
+    filename: "default.bundle.js",
   },
   module: {
     rules: [
@@ -31,6 +31,5 @@ module.exports = {
     ],
     extensions: [".js", ".json", ".jsx", ".css"],
   },
-  devtool: "source-map",
   context: __dirname,
 }
